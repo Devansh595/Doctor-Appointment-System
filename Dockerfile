@@ -22,16 +22,6 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 ENV NEXT_TELEMETRY_DISABLED 1
 
-# Set dummy environment variables for build time
-ENV DATABASE_ID=dummy
-ENV APPOINTMENT_COLLECTION_ID=dummy
-ENV PATIENT_COLLECTION_ID=dummy
-ENV DOCTOR_COLLECTION_ID=dummy
-ENV PROJECT_ID=dummy
-ENV API_KEY=dummy
-ENV NEXT_PUBLIC_ENDPOINT=dummy
-ENV NEXT_PUBLIC_BUCKET_ID=dummy
-
 RUN npm run build
 
 # Production image, copy all the files and run next
