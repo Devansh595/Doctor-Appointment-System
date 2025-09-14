@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && echo 'Build passed'",
     "start": "next start",
     "lint": "next lint",
     "docker:build": "docker build -t healthcare-app .",
