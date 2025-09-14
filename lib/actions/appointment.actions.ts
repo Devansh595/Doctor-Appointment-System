@@ -35,6 +35,18 @@ export const createAppointment = async (
 //  GET RECENT APPOINTMENTS
 export const getRecentAppointmentList = async () => {
   try {
+    // Check if environment variables are available
+    if (!DATABASE_ID || !APPOINTMENT_COLLECTION_ID) {
+      console.warn("Appwrite environment variables not configured");
+      return {
+        totalCount: 0,
+        scheduledCount: 0,
+        pendingCount: 0,
+        cancelledCount: 0,
+        documents: [],
+      };
+    }
+
     const appointments = await databases.listDocuments(
       DATABASE_ID!,
       APPOINTMENT_COLLECTION_ID!,
